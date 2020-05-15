@@ -1,0 +1,31 @@
+{
+    "customers": [{
+            "id": 0,
+            "type": "A",
+            "name": "González",
+            "email": "email1@1.com",
+            "password": "pass1"
+        },
+        {
+            "id": 0,
+            "type": "C",
+            "name": "González",
+            "email": "email1@1.com",
+            "password": "pass1"
+        },
+        {
+            "id": 0,
+            "type": "C",
+            "name": "González",
+            "email": "email1@1.com",
+            "password": "pass1"
+        },
+        {
+            "id": 0,
+            "type": "C",
+            "name": "González",
+            "email": "email1@1.com",
+            "password": "pass1"
+        }
+    ]
+}
