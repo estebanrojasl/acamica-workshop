@@ -35,6 +35,12 @@ h2 {
     padding-left: 1rem;
 }
 
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+}
+
 p {
     font-family: 'Roboto', sans-serif; 
     margin: 0;     
@@ -124,10 +130,18 @@ input[type=password], select {
     padding: 0px; 
 }
 
-.container_about {
+.container_paquete {
     display: flex;
     flex-direction: row;
     margin-bottom: 5%;
+    justify-content: space-between;
+}
+
+.card_paquete {
+    flex-direction: column;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    
 }
 
 
@@ -154,8 +168,7 @@ a {
 }
 
 img { 
-    width:50%; 
+    width:100%; 
     height:100%; 
-    padding-right: 5%;
-    object-fit:cover; 
+    padding-right: 5%;    
 } 
