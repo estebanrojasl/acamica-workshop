@@ -1,0 +1,20 @@
+{
+  "ventas": [
+    {
+      "id": "0",
+      "nombreComprador": "Yilmer",
+      "nombrePaquete": "Tour de Francia",
+      "emailComprador": "yil@hotmail.com",
+      "idComprador": "",
+      "fecha": "10-ene-2020"
+    },
+    {
+      "id": "1",
+      "nombreComprador": "Mar",
+      "nombrePaquete": "",
+      "emailComprador": "",
+      "idComprador": "",
+      "fecha": "10-ene-2020"
+    }
+  ]
+}
