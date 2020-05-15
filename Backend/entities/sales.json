@@ -1,20 +1,19 @@
 {
-  "ventas": [
-    {
-      "id": "0",
-      "nombreComprador": "Yilmer",
-      "nombrePaquete": "Tour de Francia",
-      "emailComprador": "yil@hotmail.com",
-      "idComprador": "",
-      "fecha": "10-ene-2020"
-    },
-    {
-      "id": "1",
-      "nombreComprador": "Mar",
-      "nombrePaquete": "",
-      "emailComprador": "",
-      "idComprador": "",
-      "fecha": "10-ene-2020"
-    }
-  ]
+    "ventas": [{
+            "id": 1,
+            "nombreComprador": "Juan",
+            "nombrePaquete": "Tour de Francia",
+            "emailComprador": "juan@1.com",
+            "idComprador": 1,
+            "fecha": "10-ene-2020"
+        },
+        {
+            "id": 2,
+            "nombreComprador": "Carlos",
+            "nombrePaquete": "Guatapé",
+            "emailComprador": "carlos@1.com",
+            "idComprador": 2,
+            "fecha": "10-ene-2020"
+        }
+    ]
 }

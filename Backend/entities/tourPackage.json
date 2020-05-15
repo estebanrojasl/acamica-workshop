@@ -1,0 +1,30 @@
+{
+    "tourPackages": [{
+            "id": 1,
+            "imageUrl": "https:algo",
+            "packageName": "Tour de Francia",
+            "destination": "Francia",
+            "description": "lorem ipsum dolor",
+            "quantity": 5,
+            "price": 1000000
+        },
+        {
+            "id": 2,
+            "imageUrl": "https:algo",
+            "packageName": "Guatape",
+            "destination": "Guatapé",
+            "description": "lorem ipsum dolor",
+            "quantity": 5,
+            "price": 1000000
+        },
+        {
+            "id": 3,
+            "imageUrl": "https:algo",
+            "packageName": "Sopetrán",
+            "destination": "Sopetran",
+            "description": "lorem ipsum dolor",
+            "quantity": 5,
+            "price": 1000000
+        }
+    ]
+}
