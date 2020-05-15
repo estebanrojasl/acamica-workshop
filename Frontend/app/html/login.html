@@ -33,21 +33,20 @@
             </p>
 
             <div class="container_form">
-                <form action="">
-                    <label for="username">Usuario</label>
-                    <input type="text" id="username" placeholder="Escribe tu usuario" /><br />
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" placeholder="Escribe tu password" /><br />
-
+                <form id="login_form" method="get">
+                    <label for="username_login">Usuario</label>
+                    <input type="text" id="username_login" placeholder="Escribe tu usuario" /><br />
+                    <label for="password_login">Contraseña</label>
+                    <input type="password" id="password_login" placeholder="Escribe tu password" /><br />
 
                     <div class="container_radio">
-                        <input type="radio" id="comprador" name="comprador" value="comprador">
+                        <input type="radio" id="comprador_login" name="comprador" value="comprador">
                         <label for="comprador">comprador</label>
-                        <input type="radio" id="administrador" name="administrador" value="administrador">
+                        <input type="radio" id="administrador_login" name="administrador" value="administrador">
                         <label for="administrador">administrador</label>
                     </div>
 
-                    <button id="btnCrear">Entrar</button>
+                    <button id="btnlogin">Entrar</button>
                 </form>
             </div>
         </div>
@@ -60,17 +59,14 @@
             </p>
 
             <div class="container_form">
-                <form action="">
-                    <label for="username">Nombre de Usuario</label>
-                    <input type="text" id="username" placeholder="Escribe tu usuario" /><br />
-                    <label for="username">Ingresa tu email</label>
-                    <input type="text" id="username" placeholder="corona@gmail.com" /><br />
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" placeholder="Escribe tu password" /><br />
-
-
-
-                    <button id="btnCrear">Entrar</button>
+                <form id="signin_form" method="get"></form>>
+                <label for="username">Nombre de Usuario</label>
+                <input type="text" id="username_signin" placeholder="Escribe tu usuario" /><br />
+                <label for="username">Ingresa tu email</label>
+                <input type="text" id="email_signin" placeholder="corona@gmail.com" /><br />
+                <label for="password">Contraseña</label>
+                <input type="password" id="password_signin" placeholder="Escribe tu password" /><br />
+                <button id="btnRegistrar">Entrar</button>
                 </form>
             </div>
         </div>
@@ -85,7 +81,7 @@
                 </div>
             </div>
         </footer>
-
+        <script src="../js/login.js"></script>
 </body>
 
 </html>
