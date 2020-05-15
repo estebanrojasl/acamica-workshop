@@ -27,7 +27,7 @@ server.post("/api/v1/turisteo/registro", (req, res) => {
     const { id } = req.body;
     const idExiste = compradores.filter((element) => element.id === id);
     if (idExiste.length > 0) {
-        return res.status(409).json({ mensaje: "Ya existe ese comprador" });
+        return res.status(409).json({ mensaje: "Ya existe ese usuario" });
     }
     const nuevoComprador = req.body;
     paquetes.push(nuevoComprador);
@@ -37,16 +37,16 @@ server.post("/api/v1/turisteo/registro", (req, res) => {
 // enviar usuario y contrasena
 server.post("/api/v1/turisteo/login", (req, res) => {
     const { email, contrasena } = req.body;
-    const usuarioExiste = compradores.find(
-        (element) => element.email === req.param.email
-    )
+    const usuarioExiste = compradores.find(element => {
+        return element.email === email;
+    })
     if (!usuarioExiste) {
-        res.status(403).json({ mensaje: "Usuario o clave incorrecta" });
+        return res.status(403).json({ mensaje: "Usuario o clave incorrecta" });
     } else {
-        if (usuarioExiste.password === req.param.password) {
-            res.status(200).json(usuarioExiste);
+        if (usuarioExiste.password === contrasena) {
+            return res.status(200).json(usuarioExiste);
         } else {
-            res.status(403).json({ mensaje: "Usuario o clave incorrecta" });
+            return res.status(403).json({ mensaje: "Usuario o clave incorrecta" });
         }
     }
 
