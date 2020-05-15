@@ -83,6 +83,8 @@ input[type=password], select {
   }
 
   button {
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
     width: 100%;
     background-color: #5e92f3;
     color: white;
@@ -107,6 +109,10 @@ input[type=password], select {
     position: fixed;
     display: block;
     width: 100%;
+}
+
+.container_radio {
+    margin: 5px;
 }
 
 .menu {
