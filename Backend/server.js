@@ -15,16 +15,40 @@ server.get("/api/v1/turisteo/health", (req, res) => {
 });
 // listar todos los paquetes
 server.get("/api/v1/turisteo/paquetes", (req, res) => {
-    console.log(res.body);
+    if (!paquetes) {
+        res.status(404).json({ mensaje: "No hay paquetes" });
+    } else {
+        res.status(200).json(paquetes);
+    }
 });
 
 // guardar datos del registro nombre, email, password solo compradores
 server.post("/api/v1/turisteo/registro", (req, res) => {
-
+    const { id } = req.body;
+    const idExiste = compradores.filter((element) => element.id === id);
+    if (idExiste.length > 0) {
+        return res.status(409).json({ mensaje: "Ya existe ese comprador" });
+    }
+    const nuevoComprador = req.body;
+    paquetes.push(nuevoComprador);
+    return res.status(201).json(nuevoComprador);
 });
 
 // enviar usuario y contrasena
 server.post("/api/v1/turisteo/login", (req, res) => {
+    const { email, contrasena } = req.body;
+    const usuarioExiste = compradores.find(
+        (element) => element.email === req.param.email
+    )
+    if (!usuarioExiste) {
+        res.status(403).json({ mensaje: "Usuario o clave incorrecta" });
+    } else {
+        if (usuarioExiste.password === req.param.password) {
+            res.status(200).json(usuarioExiste);
+        } else {
+            res.status(403).json({ mensaje: "Usuario o clave incorrecta" });
+        }
+    }
 
 });
 
