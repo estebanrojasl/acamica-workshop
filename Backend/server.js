@@ -7,7 +7,7 @@ const compradores = require("./entities/user.json").customers;
 
 const server = express();
 const PORT = 3000;
-const privateKey = "super secure key";
+const privateKey = "secure key";
 
 server.use(bodyParser.json());
 
