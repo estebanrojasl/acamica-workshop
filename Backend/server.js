@@ -1,4 +1,5 @@
 const express = require("express");
+const jwt = require("jsonwebtoken");
 const bodyParser = require("body-parser");
 const ventas = require("./entities/sales.json").ventas;
 const paquetes = require("./entities/tourPackage.json").tourPackages;
@@ -6,6 +7,8 @@ const compradores = require("./entities/user.json").customers;
 
 const server = express();
 const PORT = 3000;
+const FIRMA = "una_firma_:D";
+
 
 server.use(bodyParser.json());
 
