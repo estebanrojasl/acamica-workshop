@@ -1,6 +1,7 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const ventas = require("./entities/sales.json").ventas;
 const paquetes = require("./entities/tourPackage.json").tourPackages;
 const compradores = require("./entities/user.json").customers;
@@ -10,6 +11,19 @@ const PORT = 3000;
 const privateKey = "secure key";
 
 server.use(bodyParser.json());
+server.use(cors());
+// server.use(function (req, res, next) {
+//   res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+//   );
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept, x-auth"
+//   );
+//   next();
+// });
 
 const validateJwtMiddleware = (req, res, next) => {
   const jwtToken = req.headers["authorization"];
@@ -53,30 +67,38 @@ server.post("/api/v1/turisteo/registro", (req, res) => {
     return res.status(409).json({ mensaje: "Ya existe ese usuario" });
   }
   const nuevoComprador = req.body;
-  paquetes.push(nuevoComprador);
+  nuevoComprador.auth = "C";
+  nuevoComprador.id = compradores.length + 1;
+  compradores.push(nuevoComprador);
+  console.log(compradores);
   return res.status(201).json(nuevoComprador);
 });
 
 // enviar usuario y contrasena
 server.post("/api/v1/turisteo/login", (req, res) => {
   const { email, contrasena } = req.body;
-  const usuarioExiste = compradores.find((element) => {
+  const usuario = compradores.find((element) => {
     return element.email === email;
   });
-  if (!usuarioExiste) {
+  if (!usuario) {
+    console.log("!usuario");
     return res.status(403).json({ mensaje: "Usuario o clave incorrecta" });
   } else {
-    if (usuarioExiste.password === contrasena) {
-      const token = jwt.sign(usuarioExiste, privateKey, { expiresIn: 20 });
-      return res.status(200).json(token);
+    if (usuario.password === contrasena) {
+      const resBody = {};
+      resBody.tipousuario = usuario.auth;
+      const tokenServer = jwt.sign(usuario, privateKey, { expiresIn: 30 });
+      resBody.token = tokenServer;
+      res.status(200).json(resBody);
     } else {
+      console.log("!password");
       return res.status(403).json({ mensaje: "Usuario o clave incorrecta" });
     }
   }
 });
 
 // para ingresar un objeto ventas
-server.post("/api/v1/turisteo/compra", (req, res) => {
+server.post("/api/v1/turisteo/compra", validateJwtMiddleware, (req, res) => {
   const { id } = req.body;
   const usuarioExiste = compradores.find((element) => {
     return element.id === id;

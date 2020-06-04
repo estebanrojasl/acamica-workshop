@@ -15,8 +15,8 @@
         <div class="container_menu">
             <ul>
                 <li class="menu"><a href="/../../index.html">Home</a></li>
-                <li class="menu"><a href="usuarios.html">Login/Sign in</a></li>
-                <li class="menu"><a href="Frontend/app/styles/styles.css">Administración</a></li>
+                <li class="menu"><a href="login.html">Login/Sign in</a></li>
+                <!-- <li class="menu"><a href="admin.html">Administración</a></li> -->
             </ul>
         </div>
         <div class="container_head">
@@ -34,22 +34,15 @@
 
 <!----------- Login usuario y administrador ----------->
 
-            <div class="container_form">
-                <form id="login_form" method="get">
+            <div id="container_form" class="container_form">
+
                     <label for="username_login">Usuario</label>
                     <input type="text" id="username_login" placeholder="Escribe tu usuario" /><br />
                     <label for="password_login">Contraseña</label>
                     <input type="password" id="password_login" placeholder="Escribe tu password" /><br />
 
-                    <div class="container_radio">
-                        <input type="radio" id="comprador_login" name="comprador" value="comprador">
-                        <label for="comprador">comprador</label>
-                        <input type="radio" id="administrador_login" name="administrador" value="administrador">
-                        <label for="administrador">administrador</label>
-                    </div>
-
                     <button id="btnlogin">Entrar</button>
-                </form>
+                    
             </div>
         </div>
 
@@ -62,8 +55,7 @@
 
 <!----------- Registro de nuevo usuario ----------->
 
-            <div class="container_form">
-                <form id="signin_form" method="get">
+            <div id="container_form_reg" class="container_form">
                 <label for="username">Nombre de Usuario</label>
                 <input type="text" id="username_signin" placeholder="Escribe tu usuario" /><br />
                 <label for="username">Ingresa tu email</label>
@@ -71,7 +63,6 @@
                 <label for="password">Contraseña</label>
                 <input type="password" id="password_signin" placeholder="Escribe tu password" /><br />
                 <button id="btnRegistrar">Entrar</button>
-                </form>
             </div>
         </div>
 
@@ -85,7 +76,9 @@
                 </div>
             </div>
         </footer>
-        <script src="../js/login.js"></script>
-</body>
+        <script src="../../app/js/variables.js"></script>
+        <script src="../../app/js/login.js"></script>
+        <script src="../../app/js/signin.js"></script>
+    </body>
 
 </html>

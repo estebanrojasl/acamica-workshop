@@ -1,30 +1,40 @@
 {
-    "tourPackages": [{
-            "id": 1,
-            "imageUrl": "https:algo",
-            "packageName": "Tour de Francia",
-            "destination": "Francia",
-            "description": "lorem ipsum dolor",
-            "quantity": 5,
-            "price": 1000000
-        },
-        {
-            "id": 2,
-            "imageUrl": "https:algo",
-            "packageName": "Guatape",
-            "destination": "Guatapé",
-            "description": "lorem ipsum dolor",
-            "quantity": 5,
-            "price": 1000000
-        },
-        {
-            "id": 3,
-            "imageUrl": "https:algo",
-            "packageName": "Sopetrán",
-            "destination": "Sopetran",
-            "description": "lorem ipsum dolor",
-            "quantity": 5,
-            "price": 1000000
-        }
-    ]
+  "tourPackages": [
+    {
+      "id": 1,
+      "imageUrl": "https://fakeimg.pl/250x100/",
+      "packageName": "Tour de Francia",
+      "destination": "Francia",
+      "description": "lorem ipsum dolor",
+      "quantity": 5,
+      "price": 1000000
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://fakeimg.pl/250x100/",
+      "packageName": "Guatape",
+      "destination": "Guatapé",
+      "description": "lorem ipsum dolor",
+      "quantity": 5,
+      "price": 1000000
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://fakeimg.pl/250x100/",
+      "packageName": "Sopetrán",
+      "destination": "Sopetran",
+      "description": "lorem ipsum dolor",
+      "quantity": 5,
+      "price": 1000000
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://fakeimg.pl/250x100/",
+      "packageName": "Taparto",
+      "destination": "Taparto",
+      "description": "lorem ipsum dolor",
+      "quantity": 5,
+      "price": 1000000
+    }
+  ]
 }

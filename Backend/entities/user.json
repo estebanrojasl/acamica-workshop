@@ -1,31 +1,32 @@
 {
-    "customers": [{
-            "id": 1,
-            "type": "A",
-            "name": "Admin",
-            "email": "admin@1.com",
-            "password": "pass1"
-        },
-        {
-            "id": 2,
-            "type": "C",
-            "name": "Carlos",
-            "email": "carlos@1.com",
-            "password": "pass1"
-        },
-        {
-            "id": 3,
-            "type": "C",
-            "name": "Juan",
-            "email": "juan@1.com",
-            "password": "pass1"
-        },
-        {
-            "id": 4,
-            "type": "C",
-            "name": "pedro",
-            "email": "pedro@1.com",
-            "password": "pass1"
-        }
-    ]
+  "customers": [
+    {
+      "id": 1,
+      "auth": "A",
+      "name": "Admin",
+      "email": "admin@1.com",
+      "password": "pass1"
+    },
+    {
+      "id": 2,
+      "auth": "C",
+      "name": "Carlos",
+      "email": "carlos@1.com",
+      "password": "pass1"
+    },
+    {
+      "id": 3,
+      "auth": "C",
+      "name": "Juan",
+      "email": "juan@1.com",
+      "password": "pass1"
+    },
+    {
+      "id": 4,
+      "auth": "C",
+      "name": "pedro",
+      "email": "pedro@1.com",
+      "password": "pass1"
+    }
+  ]
 }
