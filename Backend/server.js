@@ -87,7 +87,7 @@ server.post("/api/v1/turisteo/login", (req, res) => {
     if (usuario.password === contrasena) {
       const resBody = {};
       resBody.tipousuario = usuario.auth;
-      const tokenServer = jwt.sign(usuario, privateKey, { expiresIn: 30 });
+      const tokenServer = jwt.sign(usuario, privateKey, { expiresIn: 600 });
       resBody.token = tokenServer;
       res.status(200).json(resBody);
     } else {
@@ -139,15 +139,18 @@ server.get("/api/v1/turisteo/paquetes/ventas", (req, res) => {
 });
 
 // Crear un paquete
-server.post("/api/v1/turisteo/paquetes", (req, res) => {
+server.post("/api/v1/turisteo/paquetes", validateJwtMiddleware, (req, res) => {
   const { id } = req.body;
+  console.log(req);
   const idExiste = paquetes.filter((element) => element.id === id);
   if (idExiste.length > 0) {
     return res.status(409).json({ mensaje: "Ya existe ese id" });
+  } else {
+    const nuevaVenta = req.body;
+    nuevaVenta.id = paquetes.length + 1;
+    paquetes.push(nuevaVenta);
+    return res.status(201).json(nuevaVenta);
   }
-  const nuevaVenta = req.body;
-  paquetes.push(nuevaVenta);
-  return res.status(201).json(nuevaVenta);
 });
 
 // Actualizar un paquete

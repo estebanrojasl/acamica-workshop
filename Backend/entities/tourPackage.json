@@ -26,15 +26,6 @@
       "description": "lorem ipsum dolor",
       "quantity": 5,
       "price": 1000000
-    },
-    {
-      "id": 4,
-      "imageUrl": "https://fakeimg.pl/250x100/",
-      "packageName": "Taparto",
-      "destination": "Taparto",
-      "description": "lorem ipsum dolor",
-      "quantity": 5,
-      "price": 1000000
     }
   ]
 }
