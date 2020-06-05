@@ -133,19 +133,27 @@ server.get("/api/v1/turisteo/paquetes/ventas", (req, res) => {
 });
 
 // Crear un paquete
-server.post("/api/v1/turisteo/paquetes", validateJwtMiddleware, (req, res) => {
-  const { id } = req.body;
-  console.log(req.body);
-  const idExiste = paquetes.filter((element) => element.id === id);
-  if (idExiste.length > 0) {
-    return res.status(409).json({ mensaje: "Ya existe ese id" });
-  } else {
-    const nuevaVenta = req.body;
-    nuevaVenta.id = paquetes.length + 1;
-    paquetes.push(nuevaVenta);
-    return res.status(201).json(nuevaVenta);
+server.options("/api/v1/turisteo/paquetes", cors());
+server.post(
+  "/api/v1/turisteo/paquetes",
+  cors(),
+  validateJwtMiddleware,
+  (req, res) => {
+    const { packageName } = req.body;
+    const existe = paquetes.filter(
+      (element) => element.packageName === packageName
+    );
+    if (existe.length > 0) {
+      return res.status(409).json({ mensaje: "Ya existe ese paquete" });
+    } else {
+      const nuevaVenta = req.body;
+      nuevaVenta.id = paquetes.length + 1;
+      paquetes.push(nuevaVenta);
+      console.log(paquetes);
+      return res.status(201).json(nuevaVenta);
+    }
   }
-});
+);
 
 // Actualizar un paquete
 server.put("/api/v1/turisteo/paquetes/:id", (req, res) => {
