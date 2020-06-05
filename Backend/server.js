@@ -6,6 +6,8 @@ const ventas = require("./entities/sales.json").ventas;
 const paquetes = require("./entities/tourPackage.json").tourPackages;
 const compradores = require("./entities/user.json").customers;
 
+const { sequelize } = require("./db/sequelize");
+
 const server = express();
 const PORT = 3000;
 const privateKey = "secure key";
